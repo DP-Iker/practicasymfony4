@@ -1,0 +1,75 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	{{ 'provider.list_title'|trans }}
+{% endblock %}
+
+{% block body %}
+	<div class="container my-4">
+		<h1 class="mb-4">{{ 'provider.list_title'|trans }}</h1>
+		<div class="d-flex justify-content-end mb-3">
+			<a href="{{ path('provider_new') }}" class="btn btn-primary">{{ 'provider.create_provider'|trans }}</a>
+		</div>
+
+		<div class="table-responsive">
+			<table class="table table-bordered table-hover align-middle">
+				<thead class="table-light">
+					<tr class="text-center align-middle">
+						<th>ID</th>
+						<th>{{ 'provider.name'|trans }}</th>
+						<th>{{ 'provider.email'|trans }}</th>
+						<th>{{ 'provider.phone'|trans }}</th>
+						<th>{{ 'provider.type'|trans }}</th>
+						<th>{{ 'provider.active'|trans }}</th>
+						<th colspan="2">{{ 'provider.actions'|trans }}</th>
+					</tr>
+				</thead>
+				<tbody>
+					{% for provider in providers %}
+						<tr>
+							<td>
+								<a href="{{ path('provider_show', {'id': provider.id}) }}">{{ provider.id }}</a>
+							</td>
+							<td class="text-truncate" style="max-width: 150px;">
+								{{ provider.name }}
+							</td>
+							<td class="text-truncate" style="max-width: 200px;">
+								{{ provider.email }}
+							</td>
+							<td class="text-truncate" style="max-width: 150px;">
+								{{ provider.phone }}
+							</td>
+							<td class="text-center align-middle">
+								{% if provider.type == 'hotel' %}
+									<i class="bi bi-house-fill"></i>
+								{% elseif provider.type == 'pista' %}
+									<i class="bi bi-layers"></i>
+								{% elseif provider.type == 'complemento' %}
+									<i class="bi bi-box-seam"></i>
+								{% else %}
+									<i class="bi bi-question-circle"></i>
+								{% endif %}
+							</td>
+							<td class="text-center align-middle">
+								{{ provider.active ? 'Sí' : 'No' }}
+							</td>
+							<td>
+								<a href="{{ path('provider_edit', {'id': provider.id}) }}" class="btn btn-sm btn-warning">Modificar</a>
+							</td>
+							<td>
+								<form method="post" action="{{ path('provider_delete', {id: provider.id}) }}" onsubmit="return confirm('¿Seguro que quieres eliminar este proveedor?');">
+									<input type="hidden" name="_token" value="{{ csrf_token('delete' ~ provider.id) }}">
+									<button class="btn btn-sm btn-danger">Eliminar</button>
+								</form>
+							</td>
+						</tr>
+					{% else %}
+						<tr>
+							<td colspan="8" class="text-center">No hay proveedores registrados.</td>
+						</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+		</div>
+	</div>
+{% endblock %}

@@ -1,0 +1,42 @@
+app_provider:
+    path: /{_locale}/provider
+    defaults:
+        _controller: App\Controller\ProviderController::index
+        _locale: es
+    requirements:
+        _locale: es|ca|en
+
+provider_show:
+    path: /{_locale}/provider/{id}
+    defaults:
+        _controller: App\Controller\ProviderController::show
+        _locale: es
+    requirements:
+        _locale: es|ca|en
+        id: '\d+'
+
+provider_new:
+    path: /{_locale}/provider/new
+    defaults:
+        _controller: App\Controller\ProviderController::new
+        _locale: es
+    requirements:
+        _locale: es|ca|en
+
+provider_edit:
+    path: /{_locale}/provider/{id}/edit
+    defaults:
+        _controller: App\Controller\ProviderController::edit
+        _locale: es
+    requirements:
+        _locale: es|ca|en
+        id: '\d+'
+
+provider_delete:
+    path: /{_locale}/provider/{id}/delete
+    defaults:
+        _controller: App\Controller\ProviderController::delete
+        _locale: es
+    requirements:
+        _locale: es|ca|en
+        id: '\d+'

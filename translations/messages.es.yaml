@@ -1,0 +1,21 @@
+provider:
+    name: "Nombre"
+    email: "Correo electrónico"
+    phone: "Número de teléfono"
+    type: "Tipo"
+    type_options:
+        hotel: "Hotel"
+        pista: "Pista"
+        complemento: "Complemento"
+        placeholder: "Selecciona un tipo"
+    active: "¿Está activo?"
+    actions: "Acciones"
+
+    list_title: "Listado de proveedores"
+    create_provider: "Añadir proveedor"
+
+    edit_title: "Editar proveedor"
+    new_title: "Crear proveedor"
+    update_button: "Actualizar"
+    create_button: "Crear"
+    back_to_list: "← Volver al listado"

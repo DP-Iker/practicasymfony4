@@ -1,0 +1,21 @@
+provider:
+    name: "Nom"
+    email: "Correu electrónic"
+    phone: "Número de teléfon"
+    type: "Tipus"
+    type_options:
+        hotel: "Hotel"
+        pista: "Pista"
+        complemento: "Complement"
+        placeholder: "Selecciona un tipus"
+    active: "Es actiu?"
+    actions: "Accions"
+
+    list_title: "Llistat de proveidors"
+    create_provider: "Afegir proveidor"
+
+    edit_title: "Editar proveidor"
+    new_title: "Crear proveidor"
+    update_button: "Actualitzar"
+    create_button: "Crear"
+    back_to_list: "← Tornar al llistat"

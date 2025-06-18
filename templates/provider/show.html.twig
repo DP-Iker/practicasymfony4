@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<h1>Detalle del proveedor {{ provider.name }}</h1>
+
+<ul>
+    <li>Email: {{ provider.email }}</li>
+    <li>Teléfono: {{ provider.phone }}</li>
+    <li>Tipo: {{ provider.type }}</li>
+    <li>Activo: {{ provider.active ? 'Sí' : 'No' }}</li>
+</ul>
+
+<a href="{{ path('app_provider') }}">Volver al listado</a>
+{% endblock %}

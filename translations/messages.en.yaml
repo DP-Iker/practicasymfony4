@@ -1,0 +1,21 @@
+provider:
+    name: "Name"
+    email: "Email"
+    phone: "Phone number"
+    type: "Type"
+    type_options:
+        hotel: "Hotel"
+        pista: "Track"
+        complemento: "Addon"
+        placeholder: "Select a type"
+    active: "Is Active?"
+    actions: "Actions"
+
+    list_title: "Providers list"
+    create_provider: "Create proveedor"
+
+    edit_title: "Modify provider"
+    new_title: "Create provider"
+    update_button: "Update"
+    create_button: "Create"
+    back_to_list: "← Return to list"
