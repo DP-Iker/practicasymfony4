@@ -14,7 +14,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class ProviderController extends AbstractController
 {
     /**
-     * @Route("/provider", name="provider_root")
+     * @Route("/", name="provider_root")
      */
     public function providerRedirect()
     {
